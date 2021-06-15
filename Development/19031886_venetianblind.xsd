@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="movieStore" type="movieStoreType" />
+    <xs:complexType name="AddressType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="countryCode" />
+                <xs:attribute type="xs:string" name="streetName" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="storeInfoType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="storeName" />
+            <xs:element type="AddressType" name="Address" />
+            <xs:element name="Contact" maxOccurs="unbounded">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:pattern value="98[0-9]{8}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element type="xs:string" name="Website" />
+            <xs:element name="registerNumber">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DirectorType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="directorName" />
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="nationality" use="required" />
+        <xs:attribute type="xs:string" name="type" use="required" />
+    </xs:complexType>
+    <xs:complexType name="DirectorsType">
+        <xs:sequence>
+            <xs:element type="DirectorType" name="Director" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ProducerType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="producerName" />
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="producerType" use="required" />
+    </xs:complexType>
+    <xs:complexType name="ProducersType">
+        <xs:sequence>
+            <xs:element type="ProducerType" name="Producer" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="WriterType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="writerName" />
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="writerType" use="required" />
+    </xs:complexType>
+    <xs:complexType name="ActorType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="Name" />
+            <xs:element type="xs:string" name="Country" minOccurs="0" />
+            <xs:element name="Gender">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="Male|Female" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="actorID" use="required" />
+        <xs:attribute type="xs:string" name="role" use="required" />
+    </xs:complexType>
+    <xs:complexType name="ActorsType">
+        <xs:sequence>
+            <xs:element type="ActorType" name="Actor" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MovieType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="movieName" />
+            <xs:element type="xs:string" name="productionHouse" minOccurs="0" />
+            <xs:element type="xs:string" name="releaseDate" />
+            <xs:element name="Price" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:positiveInteger">
+                        <xs:minInclusive value="100" />
+                        <xs:maxInclusive value="5000" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element type="DirectorsType" name="Directors" />
+            <xs:element type="ProducersType" name="Producers" />
+            <xs:element type="WriterType" name="Writer" maxOccurs="unbounded" />
+            <xs:element type="ActorsType" name="Actors" />
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="ID" use="required" />
+        <xs:attribute name="genre" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Action" />
+                    <xs:enumeration value="Adventure" />
+                    <xs:enumeration value="Comedy" />
+                    <xs:enumeration value="Fantasy" />
+                    <xs:enumeration value="Romantic" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute type="xs:string" name="length" use="required" />
+        <xs:attribute type="xs:string" name="language" use="required" />
+    </xs:complexType>
+    <xs:complexType name="MoviesType">
+        <xs:sequence>
+            <xs:element type="MovieType" name="Movie" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="movieStoreType">
+        <xs:sequence>
+            <xs:element type="storeInfoType" name="storeInfo" />
+            <xs:element type="MoviesType" name="Movies" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<movieStore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="19031886_venetianblind.xsd">
+	<storeInfo>
+	    <storeName>NoName Movie Store</storeName>
+		<Address countryCode="N977" streetName="National Galli">Itahari</Address>
+		<Contact>9824382947</Contact>
+		<Contact>9865753452</Contact>
+		<Website>www.NoNameMovieStore.com</Website>
+		<registerNumber>111-111-111</registerNumber>
+	</storeInfo>
+	<Movies>
+		<Movie ID="M1" genre="Action" length="114 Min" language="English">
+			<movieName>Project Power</movieName>
+			<productionHouse>Screen Arcade Supermarche</productionHouse>
+			<releaseDate>August 14, 2020</releaseDate>
+			<Price>3000</Price>
+			<Directors>
+				<Director nationality="British" type="Main-director">
+					<directorName> Henry Joost</directorName>
+				</Director>
+			</Directors>
+			<Producers>
+				<Producer producerType="Executive Producer">
+					<producerName>Ariel Schulman</producerName>
+				</Producer>
+				<Producer producerType="co-producer">
+					<producerName>Eric Newman</producerName>
+				</Producer>
+			</Producers>
+			<Writer writerType="Script Writer">
+				<writerName>Mattson Tomlin</writerName>
+			</Writer>
+			<Writer writerType="Dialouge Writer">
+				<writerName>Joseph Trapanese</writerName>
+			</Writer>
+			<Actors>
+				<Actor actorID="A1" role="Star">
+					<Name>Joseph Gordon-Levitt</Name>
+					<Gender>Male</Gender>
+				</Actor>
+				<Actor actorID="A2" role="co-Star">
+					<Name>Rodrigo Santoro</Name>
+					<Country>USA</Country>
+					<Gender>Boy</Gender>
+				</Actor>
+			</Actors>
+		</Movie>
+		<Movie ID="M2" genre="Adventure" length="101 Min" language="English">
+			<movieName>Mortal Kombat</movieName>
+			<productionHouse>Threshold Entertainment</productionHouse>
+			<releaseDate>August 18, 1995</releaseDate>
+			<Price>2000</Price>
+			<Directors>
+				<Director nationality="British" type="Main-director">
+					<directorName>Paul Anderson</directorName>
+				</Director>
+				<Director nationality="Korean" type="Assistant-director">
+					<directorName>Robin Shou</directorName>
+				</Director>
+			</Directors>
+			<Producers>
+				<Producer producerType="Executive Producer">
+					<producerName>Lawrence Kasanoff</producerName>
+				</Producer>
+			</Producers>
+			<Writer writerType="Script Writer">
+				<writerName>Kevin Droney</writerName>
+			</Writer>
+			<Actors>
+				<Actor actorID="A3" role="Star">
+					<Name>Christopher Lambert</Name>
+					<Gender>Male</Gender>
+				</Actor>
+				<Actor actorID="A4" role="co-Star">
+					<Name>Talisa Soto</Name>
+					<Country>USA</Country>
+					<Gender>Female</Gender>
+				</Actor>
+			</Actors>
+		</Movie>
+		<Movie ID="M3" genre="Comedy" length="101 Min" language="Hindi">
+			<movieName>Roohi</movieName>
+			<productionHouse>Maddock Films</productionHouse>
+			<releaseDate>11 March 2021</releaseDate>
+			<Directors>
+				<Director nationality="Indain" type="Main-director">
+					<directorName>Hardik Mehta</directorName>
+				</Director>
+			</Directors>
+			<Producers>
+				<Producer producerType="Executive Producer">
+					<producerName>Dinesh Vijan</producerName>
+				</Producer>
+				<Producer producerType="co-Producer">
+					<producerName>Mrighdeep Singh Lamba</producerName>
+				</Producer>
+			</Producers>
+			<Writer writerType="Script Writer">
+				<writerName>Mrighdeep Singh Lamba</writerName>
+			</Writer>
+			<Actors>
+				<Actor actorID="A5" role="Star">
+					<Name>	Rajkummar Rao</Name>
+					<Country>India</Country>
+					<Gender>Male</Gender>
+				</Actor>
+				<Actor actorID="A6" role="co-Star">
+					<Name>Janhvi Kapoor</Name>
+					<Country>India</Country>
+					<Gender>Female</Gender>
+				</Actor>
+			</Actors>
+		</Movie>
+		<Movie ID="M4" genre="Romantic" length="119 Min" language="Nepali">
+			<movieName>	ए मेरो हजुर ३</movieName>
+			<releaseDate>12 April 2019 </releaseDate>
+			<Directors>
+				<Director nationality="Nepali" type="Main-director">
+					<directorName>Jharana Thapa</directorName>
+				</Director>
+			</Directors>
+			<Producers>
+				<Producer producerType="Executive Producer">
+					<producerName>Sunil Kumar Thapa</producerName>
+				</Producer>
+			</Producers>
+			<Writer writerType="Script Writer">
+				<writerName>Suman Poudel</writerName>
+			</Writer>
+			<Actors>
+				<Actor actorID="A7" role="Star">
+					<Name>Anmol K.C</Name>
+					<Gender>Male</Gender>
+				</Actor>
+				<Actor actorID="A8" role="co-Star">
+					<Name>Suhana Thapa</Name>
+					<Gender>Male</Gender>
+				</Actor>
+			</Actors>
+		</Movie>
+		<Movie ID="M5" genre="Fantasy" length="164 Min" language="Tamil">
+			<movieName>Kaashmora</movieName>
+			<productionHouse>Dream Warrior Pictures</productionHouse>
+			<releaseDate>28 October 2016</releaseDate>
+			<Directors>
+				<Director nationality="Indain" type="Main-director">
+					<directorName>Gokul</directorName>
+				</Director>
+			</Directors>
+			<Producers>
+				<Producer producerType="Executive Producer">
+					<producerName>S R Prakashbabu</producerName>
+				</Producer>
+				<Producer producerType="co-Producer">
+					<producerName>V. J. Sabu Joseph</producerName>
+				</Producer>
+			</Producers>
+			<Writer writerType="Script Writer">
+				<writerName>Yashwant mahilwar</writerName>
+			</Writer>
+			<Writer writerType="Dialouge Writer">
+				<writerName>John Mahendran</writerName>
+			</Writer>
+			<Actors>
+				<Actor actorID="A9" role="Star">
+					<Name>Karthi</Name>
+					<Country>India</Country>
+					<Gender>Male</Gender>
+				</Actor>
+				<Actor actorID="A10" role="co-Star">
+					<Name>Sri Divya</Name>
+					<Country>India</Country>
+					<Gender>Female</Gender>
+				</Actor>
+			</Actors>
+		</Movie>
+	</Movies>
+</movieStore>

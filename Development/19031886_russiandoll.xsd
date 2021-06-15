@@ -1,0 +1,137 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="movieStore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="storeInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="storeName"/>
+              <xs:element name="Address">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="countryCode"/>
+                      <xs:attribute type="xs:string" name="streetName"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Contact" maxOccurs="unbounded">
+                <xs:simpleType>
+                  <xs:restriction base="xs:integer">
+                    <xs:pattern value="98[0-9]{8}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element type="xs:string" name="Website"/>
+              <xs:element name="registerNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[0-9]{3}-[0-9]{3}-[0-9]{3}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Movies">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Movie" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="movieName"/>
+                    <xs:element type="xs:string" name="productionHouse" minOccurs="0"/>
+                    <xs:element type="xs:string" name="releaseDate"/>
+                    <xs:element name="Price" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:positiveInteger">
+                          <xs:minInclusive value="1000"/>
+                          <xs:maxInclusive value="5000"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Directors">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Director" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="directorName"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="nationality" use="required"/>
+                              <xs:attribute type="xs:string" name="type" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Producers">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Producer" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="producerName"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="producerType" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Writer" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="writerName"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="writerType" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Actors">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Actor" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="Name"/>
+                                <xs:element type="xs:string" name="Country" minOccurs="0"/>
+                                <xs:element name="Gender">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:pattern value="Male|Female"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:ID" name="actorID" use="required"/>
+                              <xs:attribute type="xs:string" name="role" use="required"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:ID" name="ID" use="required"/>
+                  <xs:attribute name="genre" use="required">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:enumeration value="Action"/>
+                        <xs:enumeration value="Adventure"/>
+                        <xs:enumeration value="Comedy"/>
+                        <xs:enumeration value="Fantasy"/>
+                        <xs:enumeration value="Romantic"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute type="xs:string" name="length" use="required"/>
+                  <xs:attribute type="xs:string" name="language" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

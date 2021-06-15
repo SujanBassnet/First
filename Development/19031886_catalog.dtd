@@ -1,0 +1,38 @@
+<!ELEMENT movieStore (storeInfo,Movies)>
+<!ELEMENT storeInfo (storeName,Address,Contact+,Website,registerNumber)>
+<!ELEMENT storeName (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ATTLIST Address countryCode ID #REQUIRED>
+<!ATTLIST Address streetName CDATA #REQUIRED>
+<!ELEMENT Contact (#PCDATA)>
+<!ELEMENT Website (#PCDATA)>
+<!ELEMENT registerNumber (#PCDATA)>
+<!ELEMENT Movies (Movie+)>
+<!ELEMENT Movie (movieName,productionHouse?,releaseDate,Price?,Directors,Producers,Writer+,Actors)>
+<!ATTLIST Movie ID ID #REQUIRED>
+<!ATTLIST Movie genre CDATA #REQUIRED>
+<!ATTLIST Movie length CDATA #REQUIRED>
+<!ATTLIST Movie language CDATA #REQUIRED>
+<!ELEMENT movieName (#PCDATA)>
+<!ELEMENT productionHouse (#PCDATA)>
+<!ELEMENT releaseDate (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
+<!ELEMENT Directors (Director+)>
+<!ELEMENT Director (directorName)>
+<!ELEMENT directorName (#PCDATA)>
+<!ATTLIST Director nationality CDATA #REQUIRED>
+<!ATTLIST Director type CDATA #REQUIRED>
+<!ELEMENT Producers (Producer+)>
+<!ELEMENT Producer (producerName)>
+<!ELEMENT producerName (#PCDATA)>
+<!ATTLIST Producer producerType CDATA #REQUIRED>
+<!ELEMENT Writer (writerName)>
+<!ELEMENT writerName (#PCDATA)>
+<!ATTLIST Writer writerType CDATA #REQUIRED>
+<!ELEMENT Actors (Actor+)>
+<!ELEMENT Actor (Name,Country?,Gender)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Country (#PCDATA)>
+<!ELEMENT Gender (#PCDATA)>
+<!ATTLIST Actor actorID ID #REQUIRED>
+<!ATTLIST Actor role CDATA #REQUIRED>
